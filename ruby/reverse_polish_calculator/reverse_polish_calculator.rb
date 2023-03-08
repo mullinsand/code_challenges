@@ -24,6 +24,15 @@
 
 class ReversePolishCalculator
   def self.evaluate_string(input)
-    
+    require 'pry'; binding.pry
+    current_eval = []
+    remaining = []
+    input.split.each do |char|
+      if char.is_a?(Integer)
+        # current_eval << char
+        # current_eval.length
+      end
+    end
+
   end
 end
