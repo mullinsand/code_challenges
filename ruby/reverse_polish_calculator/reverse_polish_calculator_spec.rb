@@ -1,5 +1,4 @@
-require 'reverse_polish_calculator'
-require 'RSpec'
+require_relative 'reverse_polish_calculator'
 
 RSpec.describe ReversePolishCalculator do
   describe 'evaluate string' do

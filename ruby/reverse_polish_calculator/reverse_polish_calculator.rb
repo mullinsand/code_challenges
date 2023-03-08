@@ -24,6 +24,6 @@
 
 class ReversePolishCalculator
   def self.evaluate_string(input)
-
+    
   end
 end
