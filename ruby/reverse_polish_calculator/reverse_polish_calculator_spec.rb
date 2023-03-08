@@ -7,12 +7,12 @@ RSpec.describe ReversePolishCalculator do
       expect(ReversePolishCalculator.evaluate_string(input)).to eq(9)
     end
 
-    xit 'solves 4 13 5 / + string' do
+    it 'solves 4 13 5 / + string' do
       input = '4 13 5 / +'
       expect(ReversePolishCalculator.evaluate_string(input)).to eq(6)
     end
 
-    xit 'solves 10 6 9 3 + -11 * / * 17 + 5 + string' do
+    it 'solves 10 6 9 3 + -11 * / * 17 + 5 + string' do
       input = '10 6 9 3 + -11 * / * 17 + 5 +'
       expect(ReversePolishCalculator.evaluate_string(input)).to eq(22)
     end

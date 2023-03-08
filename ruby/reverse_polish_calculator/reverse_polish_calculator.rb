@@ -24,15 +24,25 @@
 
 class ReversePolishCalculator
   def self.evaluate_string(input)
-    require 'pry'; binding.pry
     current_eval = []
-    remaining = []
-    input.split.each do |char|
-      if char.is_a?(Integer)
-        # current_eval << char
-        # current_eval.length
+    expression = input.split
+    until expression.length == 1
+      expression.each_with_index do |char, i|
+        next unless number?(char) && number?(expression[i + 1]) && !number?(expression[i + 2])
+
+        new_result = char.to_i.public_send(expression[i + 2], expression[i + 1].to_i)
+        new_result += 1 if new_result.negative?
+        expression.slice!(i..i + 2)
+        expression.insert(i, new_result)
       end
     end
+    expression.first.to_i
+  end
 
+  def self.number?(number)
+    operators = ['+', '-', '*', '/']
+    return false if operators.include?(number)
+
+    true
   end
 end
